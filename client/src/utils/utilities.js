@@ -20,7 +20,12 @@ export const handleFtoC = f => {
 export const importAll = r => {
   let images = {}
   r.keys().forEach(image => {
-    images[image.replace('./', '').replace('.jpg', '')] = r(image)
+    images[
+      image
+        .replace('./', '')
+        .replace('-', '')
+        .replace('.jpg', '')
+    ] = r(image)
   })
   return images
 }
