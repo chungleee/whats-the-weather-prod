@@ -19,7 +19,7 @@ export const handleFtoC = f => {
 // import images with webpack require.context
 export const importAll = r => {
   let images = {}
-  r.keys().forEach((image, index) => {
+  r.keys().forEach(image => {
     images[image.replace('./', '').replace('.jpg', '')] = r(image)
   })
   return images
