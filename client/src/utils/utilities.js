@@ -13,7 +13,7 @@ export const handleUnixToHours = unix_timestamp => {
 // F to C converter
 export const handleFtoC = f => {
   const c = ((f - 32) * 5) / 9
-  return Math.round(c * 10) / (10).toString()
+  return Math.round(c).toString()
 }
 
 // import images with webpack require.context
