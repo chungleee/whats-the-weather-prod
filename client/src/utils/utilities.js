@@ -23,7 +23,7 @@ export const importAll = r => {
     images[
       image
         .replace('./', '')
-        .replace('-', '')
+        .replace(/-/g, '')
         .replace('.jpg', '')
     ] = r(image)
   })
