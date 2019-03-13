@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "concurrently \"cd client && yarn dev\" \"yarn start\" ",
-    "start": "nodemon index.js"
+    "server": "nodemon index.js",
+    "start": "node index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install --prefix client && yarn build --prefix client"
   },
   "dependencies": {
     "@google/maps": "^0.5.5",
