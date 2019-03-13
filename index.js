@@ -66,7 +66,7 @@ app.get('/location/:latitude,:longitude', (req, res) => {
 })
 
 // init server
-const port = 3000 || process.env.PORT
+const port = process.env.PORT || 3000
 app.listen(port, () => {
   console.log(`server started on localhost:${port}`)
 })
