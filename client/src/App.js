@@ -115,7 +115,7 @@ class App extends Component {
             minutely: currently.data.minutely,
             hourly: currently.data.hourly,
             daily: currently.data.daily,
-            currentIcon: currently.data.currently.icon,
+            currentIcon: currently.data.currently.icon.replace('-', ''),
             currentTemperatureInC,
             currentTime,
             currentLocation
@@ -164,7 +164,7 @@ class App extends Component {
               summary={currently.summary}
               feelsLike={Number.isNaN(feelsLike) ? '' : feelsLike}
             />
-            <NextTwentyFour hours={hours} />
+            <NextTwentyFour hours={hours} currentIcon={currentIcon} />
 
             <DarkSkyAttribution />
           </div>
