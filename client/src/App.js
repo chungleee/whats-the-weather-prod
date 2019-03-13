@@ -62,10 +62,13 @@ class App extends Component {
         const tempInC = handleFtoC(hour.temperature)
         // 3. convert unix time
         const currentTime = handleUnixToHours(hour.time)
+        // set icon
+        const hourIcon = hour.icon.replace(/-/g, '')
         // 4. put in obj
         const obj = {
           tempInC,
-          currentTime
+          currentTime,
+          hourIcon
         }
         // 5. push into hours array
         hours.push(obj)
@@ -115,7 +118,7 @@ class App extends Component {
             minutely: currently.data.minutely,
             hourly: currently.data.hourly,
             daily: currently.data.daily,
-            currentIcon: currently.data.currently.icon.replace('-', ''),
+            currentIcon: currently.data.currently.icon.replace(/-/g, ''),
             currentTemperatureInC,
             currentTime,
             currentLocation
