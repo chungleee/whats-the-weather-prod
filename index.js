@@ -12,11 +12,13 @@ const googleMapsClient = require('@google/maps').createClient({
   Promise: Promise
 })
 
-const whitelist = ['http://localhost:8080']
-const options = {
-  origin: whitelist,
-  optionsSuccessStatus: 200
-}
+// const whitelist = ['http://localhost:8080']
+// const options = {
+//   origin: whitelist,
+//   optionsSuccessStatus: 200
+// }
+
+app.use(cors())
 
 // serve static asset if in production
 if (process.env.NODE_ENV === 'production') {
@@ -27,7 +29,7 @@ if (process.env.NODE_ENV === 'production') {
   })
 }
 
-app.use(cors(options))
+// app.use(cors(options))
 app.use(morgan('tiny'))
 
 app.get('/currently/:latitude,:longitude', (req, res) => {
