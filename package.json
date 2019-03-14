@@ -12,7 +12,7 @@
     "dev": "concurrently \"cd client && yarn dev\" \"yarn start\" ",
     "server": "nodemon index.js",
     "start": "node index.js",
-    "postinstall": "NPM_CONFIG_PRODUCTION=false cd client/ && yarn install && yarn build"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd client/ && yarn install && yarn build"
   },
   "dependencies": {
     "@google/maps": "^0.5.5",
